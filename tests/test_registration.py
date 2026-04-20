@@ -22,12 +22,11 @@ class TestNegativeScenarios:
 
     @pytest.mark.registration
     @pytest.mark.negative
-    @pytest.mark.debug
     @pytest.mark.parametrize(
         "email, expected_message",
         [("", ExpectedMessages.INVALID_EMAIL_ADDRESS)] +
         [(email, ExpectedMessages.EMAIL_REGISTERED_ALREADY)
-         for email in get_emails_from_csv("test_data/registration.csv")])
+         for email in get_emails_from_csv("test_data/logged_user.csv")])
     def test_registration_wrong_email(self, driver, email, expected_message):
         flow = RegistrationFlow(driver)
 

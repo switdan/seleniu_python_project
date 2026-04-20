@@ -20,16 +20,20 @@ class RegistrationDataGenerator:
         self.year = int(self.__fake.date_of_birth().year)
         self.password_max_4 = self.__fake.password()[:4]
 
-def get_csv_data(filename):
-    rows = []
+def get_login_data(filename):
+    data = []
     with open(filename) as csvfile:
-        reader = csv.reader(csvfile)
-
-        next(reader, None)
+        reader = csv.DictReader(csvfile)
 
         for row in reader:
-            rows.append(row)
-        return rows
+            email = row["Email"].strip()
+            password = row["Password"].strip()
+
+            fullname = f"{row['FirstName'].strip()} {row['LastName'].strip()}"
+
+            data.append((email, password, fullname))
+
+    return data
 
 def get_emails_from_csv(filename):
     emails = []

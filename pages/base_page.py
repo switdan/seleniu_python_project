@@ -44,3 +44,7 @@ class BasePage:
     @property
     def current_url(self) -> str:
         return self._driver.current_url
+
+    def wait_for_page(self, text: str, time: int = 10) -> bool:
+        WebDriverWait(self._driver, time).until(EC.url_contains(text))
+        return text in self._driver.current_url
