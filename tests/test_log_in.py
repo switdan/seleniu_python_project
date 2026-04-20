@@ -3,7 +3,7 @@ import pytest
 from flows.log_in_flow import LogInFlow
 from pages.my_account_page import MyAccountPage
 from test_data.expected_messages import ExpectedMessages
-from test_data.registration_data import get_login_data, get_emails_password_from_csv
+from test_data.registration_data import get_login_data
 
 
 class TestPositiveScenarios:
