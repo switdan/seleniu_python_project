@@ -14,11 +14,11 @@ class TestPositiveScenarios:
         get_login_data("test_data/logged_user.csv"))
     def test_log_in_successfully(self, driver, email, password, fullname):
         flow = LogInFlow(driver)
+
         flow.log_in(email, password)
 
         flow = MyAccountPage(driver)
         flow.wait_for_my_account_page()
-
         assert flow.customer_account_full_name() == fullname
 
 class TestNegativeScenarios:
@@ -35,6 +35,6 @@ class TestNegativeScenarios:
     )
     def test_log_in_incorrect_values(self, driver, email, password, expected_message):
         flow = LogInFlow(driver)
-        flow.log_in(email, password)
 
+        flow.log_in(email, password)
         assert flow.login_page.red_banner_text() == expected_message
