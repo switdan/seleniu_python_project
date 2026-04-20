@@ -10,7 +10,7 @@ class HomePage(BasePage):
     _SIGN_IN_BTN = (By.XPATH, "//a[@class='login']")
 
     def open(self):
-        super()._open_url(self._URL)
+        self._open_url(self._URL)
 
     def click_sign_in(self):
         self._click(self._SIGN_IN_BTN)

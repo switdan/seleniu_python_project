@@ -10,7 +10,7 @@ class LoginPage(BasePage):
     _CREATE_ACCOUNT_BTN = (By.XPATH, "//button[@id='SubmitCreate']/span/i")
 
     def open(self):
-        super()._open_url(self._URL)
+        self._open_url(self._URL)
 
     def type_new_account_email(self, text: str):
         self._type(self._CREATE_ACCOUNT_EMAIL_INPUT, text)

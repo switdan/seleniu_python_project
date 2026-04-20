@@ -17,10 +17,10 @@ class CreateAnAccountPage(BasePage):
     _MONTH_OF_BIRTH = (By.ID, "months")
     _YEAR_OF_BIRTH = (By.ID, "years")
     _REGISTER_BTN = (By.ID, "submitAccount")
-    
+
 
     def open(self):
-        super()._open_url(self._URL)
+        self._open_url(self._URL)
 
     def get_h1_title(self) -> str:
         return self.get_text(self._H1_TITLE)
@@ -30,9 +30,9 @@ class CreateAnAccountPage(BasePage):
 
     def choose_gender(self, gender: str):
         if gender == "M":
-            super()._click(self._TITLE_GENDER_MALE)
+            self._click(self._TITLE_GENDER_MALE)
         elif gender == "F":
-            super()._click(self._TITLE_GENDER_FEMALE)
+            self._click(self._TITLE_GENDER_FEMALE)
         else:
             raise ValueError("Invalid gender")
 
