@@ -37,7 +37,7 @@ class BasePage:
         return self._find(locator).text
 
     def wait_for_loaded(self, locator: tuple, time: int = 10):
-        WebDriverWait(self._driver, 10).until(
+        WebDriverWait(self._driver, time).until(
             EC.visibility_of_element_located(locator)
         )
 

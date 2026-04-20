@@ -9,10 +9,6 @@ class HomePage(BasePage):
 
     _SIGN_IN_BTN = (By.XPATH, "//a[@class='login']")
 
-
-    def __init__(self, driver: WebDriver):
-        super().__init__(driver)
-
     def open(self):
         super()._open_url(self._URL)
 

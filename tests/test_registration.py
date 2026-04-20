@@ -13,10 +13,10 @@ class TestPositiveScenarios:
         data = RegistrationDataGenerator()
         flow = RegistrationFlow(driver)
 
-        flow.start_registration(data.EMAIL)
+        flow.start_registration(data.email)
         assert flow.create_an_account_page.get_h1_title() == ExpectedMessages.REGISTRATION_HEADER, "Registration page title didn't match"
 
-        flow.complete_registration(data.GENDER, data.FIRST_NAME, data.LAST_NAME, data.PASSWORD, data.DAY, data.MONTH, data.YEAR)
+        flow.complete_registration(data.gender, data.first_name, data.last_name, data.password, data.day, data.month, data.year)
         assert flow.my_account_page.get_green_banner_text() == ExpectedMessages.REGISTRATION_BANNER, "Green banner text didn't match"
 
 

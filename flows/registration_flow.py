@@ -1,4 +1,4 @@
-from pages.create_an_accont_page import CreateAnAccountPage
+from pages.create_an_account_page import CreateAnAccountPage
 from pages.login_page import LoginPage
 from pages.my_account_page import MyAccountPage
 
