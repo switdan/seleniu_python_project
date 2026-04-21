@@ -7,6 +7,12 @@ CHECK_INTERVAL = 0.5
 
 
 def pytest_unconfigure(config):
+    """
+    Pytest hook that opens the generated HTML report after all tests finish.
+    Skips execution on distributed workers and polls for the file up to MAX_WAIT_SECONDS.
+
+    :param config: Pytest configuration object containing runtime options
+    """
     if hasattr(config, "workerinput"):
         return
 
